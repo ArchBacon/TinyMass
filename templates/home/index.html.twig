@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <div id="hero" class="relative h-screen w-full px-20 py-50px">
+        {% include 'shared/header.html.twig' %}
+        <div id="elipse" class="absolute top-0 right-0 bottom-0 left-0 m-auto rounded-full bg-red-500 w-[650px] h-[650px]"></div>
+        <img id="product" class="absolute right-0 bottom-0 left-0 m-auto w-[557px]" src="{{ asset('juice_bottle.png') }}" alt="Juice Bottle">
+
+        {# Product #}
+        <div class="absolute top-[314px] left-[350px]">
+            {# Product Name #}
+            <h1 class="flex flex-col text-8xl uppercase font-quantico">
+                <span class="font-bold">Orange</span>
+                <span class="font-semibold text-transparent" style="-webkit-text-stroke: 2px #1E1E1E;">Grape</span>
+                <span class="font-semibold text-transparent" style="-webkit-text-stroke: 2px #1E1E1E;">Cherry</span>
+            </h1>
+
+            {# About #}
+            <div class="mt-6 max-w-xs">
+                <p class="mb-12">We use high quality Sainampueng Orange to produce tasty, sweet and sour, 100% orange juice with pulp.</p>
+                <a href="javascript:void(0)" class="font-bold uppercase">Show More +</a>
+            </div>
+        </div>
+        
+        {# Macros #}
+        <div class="flex flex-col absolute space-y-4 top-[314px] left-[1438px] w-[132px]">
+            {{ _self.macro('271', 'kCal', 'Calories') }}
+            {{ _self.macro('15', 'g', 'Protein') }}
+            {{ _self.macro('28', 'g', 'Carbs') }}
+            {{ _self.macro('11', 'g', 'Fat') }}
+        </div>
+
+        {# Scroll Down #}
+        <a href="javascript:void(0)" class="absolute bottom-48 left-16 origin-bottom-left rotate-90 font-bold uppercase">Scroll Down +</a>
+
+        {# Socials #}
+        <a href="javascript:void(0)" class="absolute right-20 bottom-12 font-bold">IG</a>
+    </div>
+{% endblock %}
+
+{% macro macro(value, type, name) %}
+    <div>
+        <p class="font-bold text-5xl">{{ value }}<span class="font-normal text-2xl">{{ type }}</span></p>
+        <p class="font-semibold text-2xl">{{ name }}</p>
+    </div>
+{% endmacro %}
