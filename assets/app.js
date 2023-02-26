@@ -24,7 +24,7 @@ import tinycolor from 'tinycolor2';
 color = tinycolor('rgb (' + color + ')').toHex();
 
 const originalColor = tinycolor(color);
-const alteredColor = tinycolor(color).brighten().brighten();
+const alteredColor = tinycolor(color).brighten().brighten().saturate();
 
 const hero = document.getElementById('hero');
 hero.style.background = "linear-gradient(to right, " + originalColor + ", " + alteredColor + ", " + originalColor + ")";
