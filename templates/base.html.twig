@@ -12,7 +12,8 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body>
+    <body class="px-20 py-50px font-montserrat text[#1E1E1E]">
+        {% include 'shared/header.html.twig' %}
         {% block body %}{% endblock %}
     </body>
 </html>

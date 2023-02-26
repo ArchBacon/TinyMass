@@ -7,7 +7,19 @@ module.exports = {
     ],
     darkMode: 'class',
     theme: {
-        extend: {},
+        fontFamily: {
+            'chewy': ['Chewy', 'cursive'],
+            'montserrat': ['Montserrat', 'sans-serif'],
+            'quantico': ['Quantico', 'sans-serif'],
+        },
+        extend: {
+            spacing: {
+                '50px': '3.125rem',
+            },
+            fontSize: {
+                '32px': ['2rem', '2.375rem'],
+            },
+        },
     },
     plugins: [],
 }
